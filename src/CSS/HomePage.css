@@ -995,6 +995,7 @@
 .middle-section-container .slick-next {
     position: absolute !important;
     top: 20% !important;
+    /* right: 0 !important; */
     z-index: 10;
     border-radius: 50%;
     width: 50px !important;
@@ -1007,7 +1008,9 @@
     transition: 0.3s ease;
 }
 
-
+.slick-prev, .slick-next {
+  z-index: 9999 !important;
+}
 .slick-prev {
     left: 25px !important;
 }
