@@ -551,6 +551,7 @@ height: 100%;
 @media(max-width:1025px) {
   .main-megamenu-container {
     flex-direction: column;
+    
   }
 
   .megamenu-left {
@@ -584,6 +585,9 @@ height: 100%;
 }
 
 @media(max-width:768px){
+    .main-megamenu-container {
+    padding: 40px 10px;
+  }
   .card-section3{
     width: 47%;
   }
@@ -606,4 +610,5 @@ height: 100%;
   .quantity-container{
     flex-wrap: wrap;
   }
+ 
 }
