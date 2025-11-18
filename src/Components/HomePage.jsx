@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../CSS/HomePage.css";
@@ -391,13 +391,30 @@ const fruitData = [
 
 const HomePage = () => {
   const data = useSelector((state) => state.users.item);
+  const [initialSlides, setInitialSlides] = useState(4);
+
+  useEffect(() => {
+    const updateSlides = () => {
+      const width = window.innerWidth;
+
+      if (width < 576) setInitialSlides(1);
+      else if (width < 992) setInitialSlides(2);
+      else if (width < 1200) setInitialSlides(3);
+      else setInitialSlides(4);
+    };
+
+    updateSlides();
+
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, [4]);
 
   const dispatch = useDispatch();
   let sliderRef = useRef(null);
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: initialSlides,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
@@ -406,28 +423,20 @@ const HomePage = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 3,
         },
       },
       {
-        breakpoint: 425,
+        breakpoint: 426,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-           initialSlide: 1,
         },
       },
-     
     ],
   };
 
@@ -679,23 +688,21 @@ const HomePage = () => {
       {/* middle-section-container start  */}
 
       <div className="middle-section-container">
-          <div className="middle-content-bg">
-            <img src={banner4} alt="" />
+        <div className="middle-content-bg">
+          <img src={banner4} alt="" />
 
-        <div className="hero-main-section">
-          <div className="hero-section">
-            <div className="hero-text">
-              Bring naure into your home
+          <div className="hero-main-section">
+            <div className="hero-section">
+              <div className="hero-text">Bring naure into your home</div>
+              <button className="main-button">
+                <div className="button">Shop Now</div>
+                <div className="button-arrow">
+                  <img src={righticon} alt="" />
+                </div>
+              </button>
             </div>
-            <button className="main-button">
-              <div className="button">Shop Now</div>
-              <div className="button-arrow">
-                <img src={righticon} alt="" />
-              </div>
-            </button>
           </div>
         </div>
-          </div>
         <div className="slider-container">
           <Slider ref={sliderRef} {...settings}>
             {cardData.map((item, index) => (
@@ -913,8 +920,7 @@ const HomePage = () => {
         <div className="main-wrapper-contain">
           <div className=" main-slider-top-text">
             <p className="slider-top-text2">
-              Stay home & get your daily
-              needs from our shop
+              Stay home & get your daily needs from our shop
             </p>
             <p className="slider-middle-text-2">
               Start You'r Daily Shopping with <span>Nest Mart</span>

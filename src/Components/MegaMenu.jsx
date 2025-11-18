@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../CSS/MegaMenu.css";
 import BannerPage from "./BannerPage";
 import search from "../assets/Image/SVG/search-svgrepo-com (3).svg";
@@ -143,12 +143,29 @@ const thumbnails = [
   thumbnail10,
 ];
 const MegaMenu = () => {
+  const [initialSlides, setInitialSlides] = useState(4);
+
+  useEffect(() => {
+    const updateSlides = () => {
+      const width = window.innerWidth;
+
+      if (width < 576) setInitialSlides(1);
+      else if (width < 992) setInitialSlides(2);
+      else if (width < 1200) setInitialSlides(3);
+      else setInitialSlides(4);
+    };
+
+    updateSlides();
+
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, [4]);
   let sliderRef = useRef(null);
 
     const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: initialSlides,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000
