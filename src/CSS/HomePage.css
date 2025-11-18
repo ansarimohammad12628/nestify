@@ -996,7 +996,7 @@
     position: absolute !important;
     top: 20% !important;
     /* right: 0 !important; */
-    z-index: 10 ;
+    z-index: 10;
     border-radius: 50%;
     width: 50px !important;
     height: 50px !important;
@@ -1009,13 +1009,13 @@
 }
 
 .slick-prev {
-  left: 0 !important;
-  transform: translateX(25px) !important;
+    left: 0 !important;
+    transform: translateX(25px) !important;
 }
 
 .slick-next {
-  right: 0 !important;
-  transform: translateX(-25px) !important;
+    right: 0 !important;
+    transform: translateX(-25px) !important;
 }
 
 
@@ -1069,9 +1069,10 @@
 
 @media(max-width:1024px) {
 
-.middle-section{
-    padding: 40px 20px;
-}
+    .middle-section {
+        padding: 40px 20px;
+    }
+
     .card-top {
         justify-content: center;
     }
@@ -1127,7 +1128,8 @@
         width: 100%;
         line-height: unset;
     }
-    .slider-down{
+
+    .slider-down {
         width: 75%;
     }
 
@@ -1165,34 +1167,31 @@
 
 @media(max-width:426px) {
 
-     .carousel-item{
+    .carousel-item {
         height: 400px;
-     }
-     .carousel-item img{
-        height: 100%;
-     }
-     .slider-section{
-        width: 100%;
-        margin-left: 20px;
-     }
-     .slider-top-text{
-        font-size: 30px;
-        line-height: unset;
-     }
-     .slider-middle-text{
-        font-size: 20px;
-     }
-     .slider-text {
-        padding:10px 20px;
-     }
-         .slider-down{
-        width: 70%;
-    }
-    .email-text input {
-        font-size: 13px;
     }
 
-}
+    .carousel-item img {
+        height: 100%;
+    }
+
+    .slider-section {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .slider-top-text {
+        font-size: 30px;
+        line-height: unset;
+    }
+
+    .slider-middle-text {
+        font-size: 20px;
+    }
+
+    .slider-text {
+        padding: 10px 20px;
+    }
 
     .multiple-banner {
         flex-direction: column;
@@ -1228,14 +1227,26 @@
     }
 }
 
+@media(max-width:376px) {
+    .slider-down {
+        width: 65%;
+    }
 
-@media(max-width:320px){
-        .product-card{
-            width: 100%;
-        }
-        .slider-section{
+
+    .email-text input {
+        font-size: 13px;
+    }
+
+}
+
+@media(max-width:320px) {
+    .product-card {
+        width: 100%;
+    }
+
+    .slider-section {
 
         margin-left: 10px;
-     }
-    
+    }
+
 }
