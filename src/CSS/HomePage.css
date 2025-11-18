@@ -1220,6 +1220,17 @@
     }
 }
 
+@media(max-width:376px){
+
+    .slider-down{
+        width: 70%;
+    }
+    .email-text input {
+        font-size: 13px;
+    }
+
+}
+
 @media(max-width:320px){
         .product-card{
             width: 100%;
