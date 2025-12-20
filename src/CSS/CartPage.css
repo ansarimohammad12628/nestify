@@ -31,16 +31,16 @@
 .table-para span {
   color: var(--color-text);
 }
-
-.delete-image {
+.table-right-para{
   display: flex;
-  align-items: center;
+}
+.delete-image {
   height: 20px;
 }
 
 .delete-image img {
   height: 100%;
-  width: 1005;
+  width: 100%;
 }
 
 .main-cart-page {

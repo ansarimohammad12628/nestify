@@ -33,9 +33,11 @@ export const CartPage = () => {
               <p className="table-para">
                 There are <span>3 </span>products in your cart
               </p>
+              <div className="table-right-para">
+              <span>Clear Cart</span>
               <div className="delete-image">
                 <img src={deleteicon} alt="delete" />
-                Clear Cart
+              </div>
               </div>
             </div>
             <div className="cart-page">
